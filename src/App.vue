@@ -10,14 +10,16 @@
 </template>
 
 <script>
-import { Authenticator } from "@aws-amplify/ui-vue"
-
+import { Authenticator, useAuthenticator } from "@aws-amplify/ui-vue"
+const auth = useAuthenticator()
+console.log(auth)
 import Amplify from 'aws-amplify'
-// import awsconfig from './aws-exports'
+import awsconfig from './aws-exports'
 
-// Amplify.configure(awsconfig)
+Amplify.configure(awsconfig)
 
 export default {
+  name: 'Home',
   components: {
     Authenticator
   }
