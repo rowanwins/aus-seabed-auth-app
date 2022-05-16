@@ -4,7 +4,7 @@
   <authenticator
     :services="services"
     initial-state="signUp"
-    :sign-up-attributes="['email', 'username', 'nickname']"
+    :sign-up-attributes="['email', 'username','nickname','nickname','nickname','nickname','nickname','nickname','nickname','nickname','nickname' ]"
   >
     <template v-slot="{ user, signOut }">
       <h1>Hello {{ user.username }}!</h1>
@@ -29,9 +29,9 @@ const services = {
     attributes.email = attributes.email.toLowerCase();
     // check if you are able to get custom attribute name at back end
     // attributes.organization = attributes.nickname.toLowerCase();
-    attributes.nickname = attributes.nickname.toLowerCase();
+    //attributes.nickname = attributes.nickname.toLowerCase();
     console.log(attributes);
-    return Auth.signUp({
+    return Authenticator.signUp({
       username,
       password,
       attributes,
@@ -41,12 +41,12 @@ const services = {
 
 window.addEventListener("load", function () {
   document.getElementsByTagName("input")[4].placeholder = "Organization";
-  // document.getElementsByTagName("label")[4].innerText = "Organization";
+   document.getElementsByTagName("label")[4].innerText = "Organization";
 });
-
+	
 window.addEventListener("click", function () {
-  document.getElementsByTagName("input")[4].placeholder = "Organization";
-  document.getElementsByTagName("label")[4].innerText = "Organization";
+ document.getElementsByTagName("input")[4].placeholder = "Organization";
+ document.getElementsByTagName("label")[4].innerText = "Organization";
 });
 </script>
 
