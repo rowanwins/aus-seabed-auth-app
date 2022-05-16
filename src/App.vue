@@ -17,7 +17,7 @@
 import { onMounted } from "vue";
 import { Authenticator } from "@aws-amplify/ui-vue";
 
-import Amplify from 'aws-amplify'
+import Amplify,{ Auth } from 'aws-amplify'
 import awsconfig from './aws-exports'
 Amplify.configure(awsconfig)
 
@@ -31,7 +31,7 @@ const services = {
     // attributes.organization = attributes.nickname.toLowerCase();
     //attributes.nickname = attributes.nickname.toLowerCase();
     console.log(attributes);
-    return Authenticator.signUp({
+    return Auth.signUp({
       username,
       password,
       attributes,
