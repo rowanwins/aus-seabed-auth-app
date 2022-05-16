@@ -17,9 +17,9 @@
 import { onMounted } from "vue";
 import { Authenticator } from "@aws-amplify/ui-vue";
 
-// import Amplify from 'aws-amplify'
-// import awsconfig from './aws-exports'
-// Amplify.configure(awsconfig)
+import Amplify from 'aws-amplify'
+import awsconfig from './aws-exports'
+Amplify.configure(awsconfig)
 
 const services = {
   async handleSignUp(formData) {
