@@ -11,12 +11,6 @@
       <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
-  <authenticator>
-    <amplify-confirm-sign-up
-      header-text="My Custom Confirm Sign Up Text"
-      slot="confirm-sign-up"
-    ></amplify-confirm-sign-up>
-  </authenticator>
 </template>
 
 <script setup>
@@ -44,13 +38,6 @@ const services = {
     });
   },
 };
-async function confirmSignUp() {
-  try {
-    await Auth.confirmSignUp("We are reviewing you registration req");
-  } catch (error) {
-    console.log("error confirming sign up", error);
-  }
-}
 
 window.addEventListener("load", function () {
   document.getElementsByTagName("input")[4].placeholder = "Organization";
