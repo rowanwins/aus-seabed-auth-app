@@ -4,19 +4,7 @@
   <authenticator
     :services="services"
     initial-state="signUp"
-    :sign-up-attributes="[
-      'email',
-      'username',
-      'nickname',
-      'nickname',
-      'nickname',
-      'nickname',
-      'nickname',
-      'nickname',
-      'nickname',
-      'nickname',
-      'nickname',
-    ]"
+    :sign-up-attributes="['email', 'username', 'nickname']"
   >
     <template v-slot="{ user, signOut }">
       <h1>Hello {{ user.username }}!</h1>
@@ -24,7 +12,14 @@
     </template>
   </authenticator>
 </template>
-
+<template>
+  <amplify-authenticator>
+    <amplify-confirm-sign-up
+      header-text="My Custom Confirm Sign Up Text"
+      slot="confirm-sign-up"
+    ></amplify-confirm-sign-up>
+  </amplify-authenticator>
+</template>
 <script setup>
 import { onMounted } from "vue";
 import { Authenticator } from "@aws-amplify/ui-vue";
