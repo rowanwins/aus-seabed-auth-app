@@ -11,15 +11,14 @@
       <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
-</template>
-<template>
-  <amplify-authenticator>
+  <authenticator>
     <amplify-confirm-sign-up
       header-text="My Custom Confirm Sign Up Text"
       slot="confirm-sign-up"
     ></amplify-confirm-sign-up>
-  </amplify-authenticator>
+  </authenticator>
 </template>
+
 <script setup>
 import { onMounted } from "vue";
 import { Authenticator } from "@aws-amplify/ui-vue";
