@@ -11,6 +11,13 @@
       <button @click="signOut">Sign Out</button>
     </template>
   </authenticator>
+  <amplify-confirm-sign-up
+    [handleSubmit]="onConfirmSignUp"
+    slot="confirm-sign-up"
+    usernameAlias="email"
+    [formFields]="formFieldsAuthenticationCode"
+  >
+  </amplify-confirm-sign-up>
 </template>
 
 <script setup>
