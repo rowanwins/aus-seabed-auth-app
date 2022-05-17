@@ -4,7 +4,19 @@
   <authenticator
     :services="services"
     initial-state="signUp"
-    :sign-up-attributes="['email', 'username','nickname','nickname','nickname','nickname','nickname','nickname','nickname','nickname','nickname' ]"
+    :sign-up-attributes="[
+      'email',
+      'username',
+      'nickname',
+      'nickname',
+      'nickname',
+      'nickname',
+      'nickname',
+      'nickname',
+      'nickname',
+      'nickname',
+      'nickname',
+    ]"
   >
     <template v-slot="{ user, signOut }">
       <h1>Hello {{ user.username }}!</h1>
@@ -17,9 +29,9 @@
 import { onMounted } from "vue";
 import { Authenticator } from "@aws-amplify/ui-vue";
 
-import Amplify,{ Auth } from 'aws-amplify'
-import awsconfig from './aws-exports'
-Amplify.configure(awsconfig)
+import Amplify, { Auth } from "aws-amplify";
+import awsconfig from "./aws-exports";
+Amplify.configure(awsconfig);
 
 const services = {
   async handleSignUp(formData) {
@@ -38,15 +50,22 @@ const services = {
     });
   },
 };
+async function confirmSignUp() {
+  try {
+    await Auth.confirmSignUp("We are reviewing you registration req");
+  } catch (error) {
+    console.log("error confirming sign up", error);
+  }
+}
 
 window.addEventListener("load", function () {
   document.getElementsByTagName("input")[4].placeholder = "Organization";
-   document.getElementsByTagName("label")[4].innerText = "Organization";
+  document.getElementsByTagName("label")[4].innerText = "Organization";
 });
-	
+
 window.addEventListener("click", function () {
- document.getElementsByTagName("input")[4].placeholder = "Organization";
- document.getElementsByTagName("label")[4].innerText = "Organization";
+  document.getElementsByTagName("input")[4].placeholder = "Organization";
+  document.getElementsByTagName("label")[4].innerText = "Organization";
 });
 </script>
 
