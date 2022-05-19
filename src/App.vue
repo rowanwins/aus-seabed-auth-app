@@ -15,7 +15,7 @@
     [handleSubmit]="onConfirmSignUp"
     slot="confirm-sign-up"
     usernameAlias="email"
-    [formFields]="formFieldsAuthenticationCode"
+    [formFields]="Your Access is being reviewed"
   >
   </amplify-confirm-sign-up>
 </template>
